@@ -1,14 +1,13 @@
-import { signal } from '@angular/core';
-import { ApplicationConfig } from '@angular/core';
-import { provideRouter } from '@angular/router';
-import { routes } from './app.routes';
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
-export const appConfig: ApplicationConfig = {
-  providers: [
-    provideRouter(routes)
-  ]
-};
-
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet],
+  templateUrl: './app.html',
+  styleUrls: ['./app.css']
+})
 export class App {
-  protected readonly title = signal('school-app');
+  title = 'school-app';
 }
